@@ -4,14 +4,16 @@
 
 int main(){
 char c;
-int lines;
-int words;
-int space_prev; 
-int chars; 
+int lines = 0;
+int words =0;
+int space_prev =0; 
+int chars =0 ; 
 
 while( (c = getchar()) != EOF ){
-	if(c == '/n'){
+	if(c == 10){
 		lines++;
+		words++; 
+		chars++;
 	}
 	else if(c == ' '){
 		if(!space_prev){
@@ -30,7 +32,7 @@ printf("characters: %d\n",chars);
 
 printf("words: %d\n",words);
 		
-printf("liness: %d\n",lines);
+printf("lines: %d\n",lines);
 
 
 

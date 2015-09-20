@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
-int factorial(int);
 int fib(int); 
-int sqrt(int);
-int fsqrt(int);
+int isqrt(int);
+
 int main()
 {
     char line[82];
@@ -20,8 +20,8 @@ int main()
 
     printf("n: %i\n", n);
     printf("fib(%i) := %i\n", n, fib(n));
-
-
+    printf("interger sqrt(%i):= %i\n", n, isqrt(n));
+    printf("floating point sqrt(%i)= %f\n",n,sqrt((float)n)); 
 
 
 
@@ -29,12 +29,12 @@ int main()
 
 
 
-int factorial(int n)
+int isqrt(int n)
  {
      int result = 1;
-     for( int i = n; i > 1; --i )
-          result *= i;
-    return  result;
+     for( int i = 1; i*i <= n; ++i )
+          result = i;
+     return  result;
  }
 int fib(int n){
 
